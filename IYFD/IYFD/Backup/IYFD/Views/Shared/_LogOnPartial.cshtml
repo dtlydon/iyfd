@@ -1,0 +1,8 @@
+﻿@model IYFD.Models.User
+@if(Model != null) {
+    <text>Welcome <strong>@Html.Raw(Model.Username)</strong>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "GamePlayTimes";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Tuple<DateTime,DateTime>>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/time/jquery.timepicker.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/time/bootstrap-datepicker.css")" />
+<div class="main-content-admin">
+	<h2>GamePlayTimes</h2>
+	<div>
+		<table class="regions">
+			<tr>
+				<th>Start</th>
+				<th>End</th>
+			</tr>
+			@if(Model != null)
+			{
+				foreach(var times in Model)
+				{
+					<tr>
+						<td>@Html.Raw(times.Item1.ToString())</td>
+						<td>@Html.Raw(times.Item2.ToString())</td>
+					</tr>
+				}
+			}
+		</table>
+	</div>
+	@using (Html.BeginForm())
+	{
+		<div id="datepair" style="clear: left;padding-top: 15px;">
+			<h3>Add Times</h3>
+			<input name="startDate" type="text" class="date start" />
+			<input name="startTime" type="text" class="time start" /> to
+			<input name="endDate" type="text" class="date end" />
+			<input name="endTime" type="text" class="time end" />
+			<input type="submit" value="Enter Times" />
+		</div>
+	}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/time/jquery.timepicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/time/jquery.datepair.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/time/bootstrap-datepicker.js")"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// initialize input widgets first
+		$('#datepair .time').timepicker({
+			'showDuration': true,
+			'timeFormat': 'g:ia'
+		});
+
+		$('#datepair .date').datepicker({
+			'format': 'yyyy-m-d',
+			'autoclose': true
+		});
+
+		// initialize datepair
+		$('#datepair').datepair();
+	});
+</script>

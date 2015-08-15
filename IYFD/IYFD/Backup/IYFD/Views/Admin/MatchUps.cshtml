@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "MatchUps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<IYFD.Models.MatchUp>
+<div class="adminMenu">
+	@Html.Partial("AdminMenu")
+</div>
+<div class="main-content-admin">
+<h2>Match Ups</h2>   
+<div class="round-menu">
+	@Html.Partial("MatchUpMenu")
+</div>
+@using (Html.BeginForm())
+{
+    foreach (var region in Model.GroupBy(x => x.Tourny1.Region.ID))
+    { 
+		<div class="regions">
+        <h3>@Html.Raw(region.ElementAt(0).Tourny1.Region.Name)</h3>
+        <table class="picks">
+            <tr>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Winner</th>
+                <th></th>
+            </tr>
+            @foreach (var matchUp in region.OrderBy(y => y.Tourny1.Rank))
+            {
+                <tr>
+                    <td>@Html.Raw(matchUp.Tourny1.Rank.ToString()). @Html.Raw(matchUp.Tourny1.Team.Name)</td>
+                    <td>@Html.Raw(matchUp.Tourny2.Rank.ToString()). @Html.Raw(matchUp.Tourny2.Team.Name)</td>
+                    @if(matchUp.Winner.Rank > 0)
+                    {
+                        <td>@Html.Raw(matchUp.Winner.Rank.ToString()). @Html.Raw(matchUp.Winner.Team.Name)</td>
+                    }
+                    else{
+                        <td></td>
+                    }
+                    <td>@Html.ActionLink("Pick Winner", "PickWinner", "Admin", new { matchUp.ID }, null)</td>
+                </tr>
+            }
+        </table>
+		</div>
+    }
+}
+</div>

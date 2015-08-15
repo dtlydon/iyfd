@@ -1,0 +1,197 @@
+INSERT INTO Team (name)
+SELECT
+'Louisville'
+ UNION ALL SELECT 
+'N.C. A&T'
+ UNION ALL SELECT 
+'Colorado State'
+ UNION ALL SELECT 
+'Missouri'
+ UNION ALL SELECT 
+'Oklahoma State'
+ UNION ALL SELECT 
+'Oregon'
+ UNION ALL SELECT 
+'Saint Louis'
+ UNION ALL SELECT 
+'New Mexico State'
+ UNION ALL SELECT 
+'Memphis'
+ UNION ALL SELECT 
+'St Mary''s'
+ UNION ALL SELECT 
+'Michigan State'
+ UNION ALL SELECT 
+'Valparaiso'
+ UNION ALL SELECT 
+'Creighton'
+ UNION ALL SELECT 
+'Cincinnati'
+ UNION ALL SELECT 
+'Duke'
+ UNION ALL SELECT 
+'Albany'
+ UNION ALL SELECT 
+'Kansas'
+ UNION ALL SELECT 
+'W Kentucky'
+ UNION ALL SELECT 
+'North Carolina'
+ UNION ALL SELECT 
+'Villanova'
+ UNION ALL SELECT 
+'VCU'
+ UNION ALL SELECT 
+'Akron'
+ UNION ALL SELECT 
+'Michigan'
+ UNION ALL SELECT 
+'South Dakota St'
+ UNION ALL SELECT 
+'UCLA'
+ UNION ALL SELECT 
+'Minnesota'
+ UNION ALL SELECT 
+'Florida'
+ UNION ALL SELECT 
+'Northwestern St'
+ UNION ALL SELECT 
+'San Diego State'
+ UNION ALL SELECT 
+'Oklahoma'
+ UNION ALL SELECT 
+'Georgetown'
+ UNION ALL SELECT 
+'FGCU'
+ UNION ALL SELECT 
+'Gonzaga'
+ UNION ALL SELECT 
+'Southern University'
+ UNION ALL SELECT 
+'Pittsburgh'
+ UNION ALL SELECT 
+'Wichita St'
+ UNION ALL SELECT 
+'Wisconsin'
+ UNION ALL SELECT 
+'Mississippi'
+ UNION ALL SELECT 
+'Kansas St'
+ UNION ALL SELECT 
+'La Salle'
+ UNION ALL SELECT 
+'Arizona'
+ UNION ALL SELECT 
+'Belmont'
+ UNION ALL SELECT 
+'New Mexico'
+ UNION ALL SELECT 
+'Harvard'
+ UNION ALL SELECT 
+'Notre Dame'
+ UNION ALL SELECT 
+'Iowa State'
+ UNION ALL SELECT 
+'Ohio State'
+ UNION ALL SELECT 
+'Iona'
+ UNION ALL SELECT 
+'Indiana'
+ UNION ALL SELECT 
+'James madison'
+ UNION ALL SELECT 
+'NC State'
+ UNION ALL SELECT 
+'Temple'
+ UNION ALL SELECT 
+'UNLV'
+ UNION ALL SELECT 
+'California'
+ UNION ALL SELECT 
+'Syracuse'
+ UNION ALL SELECT 
+'Montana'
+ UNION ALL SELECT 
+'Butler'
+ UNION ALL SELECT 
+'Bucknell'
+ UNION ALL SELECT 
+'Marquette'
+ UNION ALL SELECT 
+'Davidson'
+ UNION ALL SELECT 
+'Illinois'
+ UNION ALL SELECT 
+'Colorado'
+ UNION ALL SELECT 
+'Miami'
+ UNION ALL SELECT 
+'Pacific'
+ UNION ALL SELECT 
+'SF Austin'
+ UNION ALL SELECT 
+'Tulsa'
+ UNION ALL SELECT 
+'Dayton'
+ UNION ALL SELECT 
+'Western Mich'
+ UNION ALL SELECT 
+'Stanford'
+ UNION ALL SELECT 
+'Eastern Ketucky'
+ UNION ALL SELECT 
+'Virginia'
+ UNION ALL SELECT 
+'George Washington'
+ UNION ALL SELECT 
+'Delaware'
+ UNION ALL SELECT 
+'Providence'
+ UNION ALL SELECT 
+'NC Central'
+ UNION ALL SELECT 
+'UConn'
+ UNION ALL SELECT 
+'Saint Joseph''s'
+ UNION ALL SELECT 
+'Milwaukee'
+ UNION ALL SELECT 
+'Weber St'
+ UNION ALL SELECT 
+'N. Dakota St'
+ UNION ALL SELECT 
+'Baylor'
+ UNION ALL SELECT 
+'Nebraska'
+ UNION ALL SELECT 
+'Louisiana'
+ UNION ALL SELECT 
+'BYU'
+ UNION ALL SELECT 
+'American'
+ UNION ALL SELECT 
+'Coastal Carolina'
+ UNION ALL SELECT 
+'Kentucky'
+ UNION ALL SELECT 
+'Kansas St.'
+ UNION ALL SELECT 
+'Manhattan'
+ UNION ALL SELECT 
+'UMass'
+ UNION ALL SELECT 
+'Mercer'
+ UNION ALL SELECT 
+'Texas'
+ UNION ALL SELECT 
+'Arizona State'
+ UNION ALL SELECT 
+'Wofford'
+ UNION ALL SELECT 
+'Albany'
+ UNION ALL SELECT 
+'Cal Poly'
+ UNION ALL SELECT 
+'NC State'
+ UNION ALL SELECT 
+'Tennessee'

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+@using (Html.BeginForm()) {
+    <div>
+        <fieldset>
+            <legend>Account Information</legend>
+            <div class="editor-label">
+                Username:
+            </div>
+            <div class="editor-field">
+                <input name="username" type="text" value="@Html.Raw(Model.Username)" />
+            </div>
+            <div class="editor-label">
+                First Name:
+            </div>
+            <div class="editor-field">
+                <input name="firstname" type="text" value="@Html.Raw(Model.FirstName)" />
+            </div>
+            <div class="editor-label">
+                Last Name:
+            </div>
+            <div class="editor-field">
+                <input name="lastname" type="text" value="@Html.Raw(Model.LastName)" />
+            </div>
+            <div class="editor-label">
+                Email:
+            </div>
+            <div class="editor-field">
+                <input name="email" type="text" value="@Html.Raw(Model.Email)" />
+            </div>
+            <div class="editor-label">
+                Password:
+            </div>
+            <div class="editor-field">
+                <input name="password" type="password" />
+            </div>
+
+            <div class="editor-label">
+                Confirm Password:
+            </div>
+            <div class="editor-field">
+                <input name="confirmPassword" type="password" />
+            </div>
+            <p>
+                <input type="submit" value="Update" />
+            </p>
+        </fieldset>
+    </div>
+}

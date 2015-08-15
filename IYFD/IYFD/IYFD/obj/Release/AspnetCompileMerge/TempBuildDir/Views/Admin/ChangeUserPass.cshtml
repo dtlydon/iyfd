@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ChangeUserPass";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <h2>ChangeUserPass</h2>
+    <div>
+        <label>Password: </label>
+        <input type="text" name="password" />
+    </div>
+    <input type="submit" value="Overried" />
+    
+    if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+    {
+		<div>
+			@Html.Raw(ViewBag.PageMessages);
+		</div>
+	}    
+}

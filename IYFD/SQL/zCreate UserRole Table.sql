@@ -1,0 +1,37 @@
+USE [IYFD]
+GO
+
+/****** Object:  Table [dbo].[UserRole]    Script Date: 02/18/2013 09:30:49 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UserRole](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[roleID] [int] NOT NULL,
+	[userID] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRoleRole_Role] FOREIGN KEY([roleID])
+REFERENCES [dbo].[Role] ([id])
+GO
+
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRoleRole_Role]
+GO
+
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRoleUser_User] FOREIGN KEY([userID])
+REFERENCES [dbo].[User] ([id])
+GO
+
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRoleUser_User]
+GO
+
+

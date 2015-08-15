@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "GenerateMatchups";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-content-admin">
+@using (Html.BeginForm())
+{
+    <h2>GenerateMatchups</h2>
+	if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+	{
+		<div>
+			@Html.Raw(ViewBag.PageMessages)
+		</div>
+	} 
+    <div>
+        @foreach(var round in @ViewBag.Rounds)
+        {
+            <input name="roundId" type="radio" value="@round.ID" onclick="displayRegions(@round.Name);"/> @Html.Raw(round.Name.ToString())
+        }
+        <br /><br />
+        <div id="regions" style="display: none">
+            @foreach(var region in @ViewBag.RegionSelect)
+            {
+                <input name="region" type="radio" value="@Html.Raw(region.Key)" /> @Html.Raw(region.Value)                
+            }
+        </div>
+        <input type="submit" value="Generate" />
+    </div>
+}
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        ('#regions').hide();
+    });
+
+    function displayRegions(roundId) {
+        if (roundId == 5) {
+            $('#regions').show();
+        }
+        else {
+            $('#regions').hide();
+        }
+    }
+
+</script>

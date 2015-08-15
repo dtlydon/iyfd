@@ -1,0 +1,103 @@
+﻿@model IYFD.Models.Tourny
+@{
+    ViewBag.Title = "TournyEntry";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	var i = 1;
+}
+
+<div class="main-content-admin">
+@using (Html.BeginForm())
+{
+<h2>Tournament Entries</h2>
+if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+{
+	<div>
+		@Html.Raw(ViewBag.PageMessages)
+	</div>
+} 
+<div>
+	<span id="tce">Hide</span><span> current entries</span>
+    <fieldset id="ce">
+        <legend>Current Entries</legend>
+        <table class="regions">
+            <tr>
+                <th>Rank</th>
+                <th>Region</th>
+                <th>Team</th>
+            </tr>
+            @foreach (var tourny in ViewBag.Tournies)
+            {
+                <tr>
+                    <td>@tourny.Rank</td>
+                    <td>@tourny.Region.Name</td>
+                    <td>@tourny.Team.Name</td>
+                </tr>
+				
+				if(i >= 16)
+				{
+					i = 0;
+					@Html.Raw("</table><table class='regions'><tr><th>Rank</th><th>Region</th><th>Team</th></tr>");
+				}
+				i++;
+            }
+        </table>
+    </fieldset>
+</div>
+<div>
+    @if(ViewBag.Tournies.Count < 64)
+    {
+    <fieldset>
+        <legend>Create Tourny</legend>
+        <fieldset>
+            <legend>Team</legend>            
+            <select name="teams">
+                @foreach (var team in ViewBag.Teams)
+                {
+                    <option value="@team.ID">@Html.Raw(team.Name)</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Region</legend>
+            <select name="regions">
+                @foreach (var region in ViewBag.Regions)
+                {
+                    <option value="@region.ID">@Html.Raw(region.Name)</option>
+                }
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Rank</legend>
+            <select name="ranks">
+                @foreach (var rank in ViewBag.Ranks)
+                {
+                    <option value="@rank.ID">@Html.Raw(rank.Name.ToString())</option>
+                }
+            </select>
+        </fieldset>
+        <input type="submit" value="Create Entry" />
+    </fieldset>
+    }
+    
+    @if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+    {
+		<div>
+			@Html.Raw(ViewBag.PageMessages);
+		</div>
+	}    
+</div>
+}
+</div>
+<script type="text/javascript">
+	$('#tce').click(function(){
+		var a = $('#tce').text();
+		if(a=='Show'){
+			$('#ce').show();
+			$('#tce').text('Hide');
+		}
+		else{
+			$('#ce').hide();
+			$('#tce').text('Show');
+		}
+	});
+</script>

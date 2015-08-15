@@ -1,0 +1,159 @@
+CREATE TABLE dbo.LastYearsBoard (score int, username varchar(250))
+
+INSERT INTO LastYearsBoard (username, score)
+SELECT
+'1scottyb',87
+ UNION ALL SELECT 
+'JFredMuggs900',85
+ UNION ALL SELECT 
+'Pastrano00',85
+ UNION ALL SELECT 
+'llockett',84
+ UNION ALL SELECT 
+'The Billiken',84
+ UNION ALL SELECT 
+'Megaroo',84
+ UNION ALL SELECT 
+'Jim Lydon',84
+ UNION ALL SELECT 
+'Walther PPK',84
+ UNION ALL SELECT 
+'The Puppy Love',83
+ UNION ALL SELECT 
+'TalleyAndSon',82
+ UNION ALL SELECT 
+'Kevin Fowler',82
+ UNION ALL SELECT 
+'Ponyup',82
+ UNION ALL SELECT 
+'The Chalk',82
+ UNION ALL SELECT 
+'SFechter',80
+ UNION ALL SELECT 
+'BillyBoy',80
+ UNION ALL SELECT 
+'Tim Bersch',79
+ UNION ALL SELECT 
+'Jefferson Reese',79
+ UNION ALL SELECT 
+'nicoav',78
+ UNION ALL SELECT 
+'Shocker',78
+ UNION ALL SELECT 
+'Lois Black',78
+ UNION ALL SELECT 
+'Rick Hainline',77
+ UNION ALL SELECT 
+'Adam Black',77
+ UNION ALL SELECT 
+'jeff Coy',77
+ UNION ALL SELECT 
+'JR''s Best',77
+ UNION ALL SELECT 
+'Jake from State Farm',77
+ UNION ALL SELECT 
+'Gary Shutt',77
+ UNION ALL SELECT 
+'debraeckhart',76
+ UNION ALL SELECT 
+'laurajhv',76
+ UNION ALL SELECT 
+'LW1',76
+ UNION ALL SELECT 
+'LindaYohe',75
+ UNION ALL SELECT 
+'Princess sparkle pants',74
+ UNION ALL SELECT 
+'Basketball Jam',74
+ UNION ALL SELECT 
+'P_Scoop_Knitty',74
+ UNION ALL SELECT 
+'Marissa Lydon',74
+ UNION ALL SELECT 
+'Scooper',73
+ UNION ALL SELECT 
+'BabyBu',73
+ UNION ALL SELECT 
+'Hotwheels',72
+ UNION ALL SELECT 
+'El Gato',72
+ UNION ALL SELECT 
+'sdjacobs',71
+ UNION ALL SELECT 
+'Geno',71
+ UNION ALL SELECT 
+'Misty',70
+ UNION ALL SELECT 
+'ARap',70
+ UNION ALL SELECT 
+'nicrobison',69
+ UNION ALL SELECT 
+'BBL',69
+ UNION ALL SELECT 
+'Digneo 2',69
+ UNION ALL SELECT 
+'Emily Steele',68
+ UNION ALL SELECT 
+'edeckhart',68
+ UNION ALL SELECT 
+'Styles Me P',67
+ UNION ALL SELECT 
+'El toro loco',67
+ UNION ALL SELECT 
+'Tonya Fowler',67
+ UNION ALL SELECT 
+'reckhart',66
+ UNION ALL SELECT 
+'Lisa Hainline',66
+ UNION ALL SELECT 
+'Crash',66
+ UNION ALL SELECT 
+'Shockers82',65
+ UNION ALL SELECT 
+'Pam Lydon',65
+ UNION ALL SELECT 
+'Pistolpete11',65
+ UNION ALL SELECT 
+'thomasballo',64
+ UNION ALL SELECT 
+'Carolyn',63
+ UNION ALL SELECT 
+'a-mjacobs',63
+ UNION ALL SELECT 
+'mikelatshaw',63
+ UNION ALL SELECT 
+'Ron Burgundy',61
+ UNION ALL SELECT 
+'asteele93',61
+ UNION ALL SELECT 
+'CRUMSTER',60
+ UNION ALL SELECT 
+'Bryant',60
+ UNION ALL SELECT 
+'aloehman',59
+ UNION ALL SELECT 
+'Loehman',59
+ UNION ALL SELECT 
+'The Ragin'' Cajun',58
+ UNION ALL SELECT 
+'Andy',53
+ UNION ALL SELECT 
+'TheDr',53
+ UNION ALL SELECT 
+'John S',53
+ UNION ALL SELECT 
+'Tristan Shutt',51
+ UNION ALL SELECT 
+'WhereWaldo',51
+ UNION ALL SELECT 
+'nicholas',41
+ UNION ALL SELECT 
+'Kevin Hebert',40
+ UNION ALL SELECT 
+'Juan El Segundo',29
+ UNION ALL SELECT 
+'Joe Willie',25
+ UNION ALL SELECT 
+'Pistol Pete',24
+ UNION ALL SELECT 
+'Gene Regan',8

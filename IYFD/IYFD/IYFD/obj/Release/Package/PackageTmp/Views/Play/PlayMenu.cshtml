@@ -1,0 +1,12 @@
+﻿@{
+    var roundName = 1;
+}
+<div>
+    <ul class="nav nav-list">
+        @foreach(var round in ViewBag.Rounds)
+        {
+            roundName = round.Name;
+            <li>@Html.ActionLink("Round " + roundName, "Index", "Play", new { round.ID }, null)</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,32 @@
+﻿body{background-color: #fff;font-family:"poor richard", Arial; font-size:14pt;}
+ul#menu li a { background-color: #fff; color: #000;margin-right:45px;}
+ul#menu {text-align: center;}
+header h1 {color:#000;}
+#logindisplay{color:#000;}
+#logindisplay a,#logindisplay a:link,#logindisplay a:visited,#logindisplay a:hover {color:#009;}
+.adminMenu{float:left; padding: 0 20px;border:solid 1px #ccc;}
+.adminMenu ul {list-style:none;padding:0;}
+.main-content{margin-left:150px;}
+.main-content-admin{margin-left:250px;}
+.picks th,.picks td{width:150px;font-size:10pt;}
+.regions{float:left;margin-right:10px;}
+table th{background-color:#ccc;}
+#tce{color:blue;text-decoration:underline;cursor:pointer;}
+.round-menu li{ list-style-type:none;display:inline;margin-left:25px;}
+.round-menu ul{padding:10px;border: solid 1px #ccc;}
+.iyfd-header{font-family:Algerian; font-size: 36pt;text-align:center;font-weight:normal;}
+.iyfd-subheader{font-family:Cambria;font-size:18pt;text-align:center;}
+.iyfd-bold{font-family:Arial Rounded MT Bold;font-size:14pt;}
+.home-wrapper{font-family:Arial;font-size:11pt;}
+.home-wrapper div {padding: 5px 0;}
+.underline{text-decoration:underline;}
+.hot-line{font-size: 16pt;margin-left:25px;}
+.third-title{font-size:14pt;text-align:center;}
+.description{font-size:14pt;}
+.spacer{margin-bottom: 25px;}
+.tab{margin-left: 25px;}
+.g-background{float:left;}
+.g-background .iyfd-header, .g-background h4 { margin-left: 125px;}
+header nav{clear:left;font-size: 12pt;}
+.inline-header{font-family: Arial Rounded MT Bold; font-size: 14pt;}
+.register-message{margin-bottom:10px;}

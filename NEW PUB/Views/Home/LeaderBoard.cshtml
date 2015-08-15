@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "LeaderBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LeaderBoard</h2>
+<table>
+    <tr>
+        <th>Points</th>
+        <th>User</th>
+    </tr>
+    @foreach(var pair in Model)
+    {
+        <tr>
+            <td>@Html.Raw(pair.Item2.ToString())</td>
+            <td>@Html.Raw(pair.Item1)</td>
+        </tr>
+    }
+</table>

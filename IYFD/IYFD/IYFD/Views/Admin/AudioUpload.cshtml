@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Audio Upload";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("AudioUpload", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <h2>Audio Clip</h2>
+    <div>
+        m4a File: <input type="file" name="file" />
+    </div>
+    <div>
+        @Html.Raw(ViewBag.UploadMessage)
+    </div>
+    <div>
+        <input type="submit" value="Save!"/>
+    </div>
+        
+}

@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var roleName = "";
+}
+<h2>Roles</h2>
+<ul>
+@foreach(var role in ViewBag.Roles)
+{
+    roleName = role.Name;
+    <li>@Html.ActionLink(roleName.ToString(), "Roles", "Admin", new { role.ID }, null)</li>
+}
+</ul>
+<fieldset>
+    <legend>
+        Add new role
+    </legend>
+    @if(string.IsNullOrEmpty(ViewBag.RoundId))
+    {
+        <div>
+            <label>Role: </label>
+            <input type="text" name="roleName" />
+        </div>
+    }
+    else
+    {
+        <input type="hidden" name="roleName" value="" />
+    }
+    <div>
+        <ul>
+            @foreach(var keyValuePair in ViewBag.Content)
+            {
+                <li><input type="checkbox" name="contentIds" value="@Html.Raw(keyValuePair.Key.ToString())" /> @Html.Raw(keyValuePair.Value.ToString())</li>
+            }
+        </ul>
+    </div>
+</fieldset>

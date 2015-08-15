@@ -1,0 +1,8 @@
+INSERT INTO REgion (region)
+SELECT 'Midwest'
+UNION ALL SELECT
+'West'
+UNION ALL SELECT
+'South'
+UNION ALL SELECT
+'East'

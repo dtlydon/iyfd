@@ -1,0 +1,15 @@
+﻿@model IYFD.Models.Team
+@{
+    ViewBag.Title = "Teams";
+}
+
+@using (Html.BeginForm())
+{
+    <h2>Team</h2>
+    <fieldset>
+        <legend>Update Team</legend>
+        <label>Team Name:</label>
+        <input name="name" type="text" value="@Model.Name" />
+        <input type="submit" value="Update" />    
+    </fieldset>
+}

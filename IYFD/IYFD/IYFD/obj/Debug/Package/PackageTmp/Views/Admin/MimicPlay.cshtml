@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "MimicPlay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MimicPlay</h2>
+@model List<IYFD.Models.MatchUp>
+<div class="adminMenu">
+    @Html.Partial("AdminMenu")
+</div>
+<div class="adminMenu">
+    @Html.Partial("MimicPlayMenu")
+</div>
+@using (Html.BeginForm())
+{
+	var i = 1;
+	
+    <h2>Match Ups</h2>  
+    
+    if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+    {
+		<div>
+			@Html.Raw(ViewBag.PageMessages);
+		</div>
+	}     
+    foreach (var region in Model.GroupBy(x => x.Tourny1.Region.ID))
+    { 
+        <h3>@Html.Raw(region.ElementAt(0).Tourny1.Region.Name)</h3>
+        <table>
+            <tr>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Winner</th>
+            </tr>
+            @foreach (var matchUp in region.OrderBy(y => y.Tourny1.Rank))
+            {
+                var checked1 = matchUp.UserChoiceId == matchUp.Tourny1.Id;
+                var checked2 = matchUp.UserChoiceId == matchUp.Tourny2.Id;
+                <tr>
+					@if(checked1)
+					{
+						<td>
+							<input id="@Html.Raw(i.ToString())" checked="checked" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny1.Id.ToString())" onclick="cW(this.id)" /> @Html.Raw(matchUp.Tourny1.Rank.ToString()). @Html.Raw(matchUp.Tourny1.Team.Name)
+						</td>
+					}
+					else
+					{
+						<td>
+							<input id="@Html.Raw(i.ToString())" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny1.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny1.Rank.ToString()). @Html.Raw(matchUp.Tourny1.Team.Name)
+						</td>
+					}
+					
+					@{ i++; }
+					
+					@if(checked2)
+					{
+						<td>
+							<input id="@Html.Raw(i.ToString())" checked="checked" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny2.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny2.Rank.ToString()). @Html.Raw(matchUp.Tourny2.Team.Name)
+						</td>
+					}
+					else
+					{
+						<td>
+							<input id="@Html.Raw(i.ToString())" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny2.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny2.Rank.ToString()). @Html.Raw(matchUp.Tourny2.Team.Name)
+						</td>
+					}
+					@if(matchUp.Winner.Rank > 0)
+					{
+						<td>
+							@Html.Raw(matchUp.Winner.Rank.ToString()). @Html.Raw(matchUp.Winner.Team.Name)
+						</td>
+					}
+					else
+					{
+						<td></td>
+					}
+                </tr>
+                i++;
+            }
+        </table>
+    }
+    <input type="submit" value="Submit Picks" />
+}
+<script type="text/javascript">
+    function cW(i) { 
+		var e = '#' + i; 
+		if(i % 2 == 1) {
+			i++;
+		}			
+		else {
+			i--;
+		}		
+		var oe = '#' + i; 
+		$(e).attr('checked', true);
+		$(oe).attr('checked', false);
+	}
+</script>

@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Pick Matchup Winner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div id="adminMenu">
+        @Html.Partial("MatchUpMenu")
+    </div>
+    <h2>Pick Matchup Winner</h2>
+    <table>
+        <tr>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Winner</th>
+        </tr>
+        <tr>
+            <td>@Html.Raw(Model.Tourny1.Team.Name)</td>
+            <td>@Html.Raw(Model.Tourny2.Team.Name)</td>
+            <td>
+                <select name="winner">
+                    <option value="@Html.Raw(Model.Tourny1.Id.ToString())">@Html.Raw(Model.Tourny1.Team.Name)</option>
+                    <option value="@Html.Raw(Model.Tourny2.Id.ToString())">@Html.Raw(Model.Tourny2.Team.Name)</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Pick Winner" />
+    
+    if(!string.IsNullOrEmpty(ViewBag.PageMessages))
+    {
+		<div>
+			@Html.Raw(ViewBag.PageMessages);
+		</div>
+	}    
+}

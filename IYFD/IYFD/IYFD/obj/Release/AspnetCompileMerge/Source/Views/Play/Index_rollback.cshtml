@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "~/Views/Shared/_playLayout.cshtml";
+}
+@model List<iyfd.models.matchup>
+    <div class="adminMenu">
+        @Html.Partial("PlayMenu")
+    </div>
+    <div class="main-content">
+        @using (Html.BeginForm())
+        {
+            var i = 1;
+
+            <h2>Match Ups</h2>
+            if (!string.IsNullOrEmpty(ViewBag.PageMessages))
+            {
+                <div>
+                    @Html.Raw(ViewBag.PageMessages)
+                </div>
+            }
+            if (Model != null)
+            {
+                foreach (var region in Model.GroupBy(x => x.Tourny1.Region.ID))
+                {
+                    <div class="regions">
+                        <h3>@Html.Raw(region.ElementAt(0).Tourny1.Region.Name)</h3>
+                        <table class="picks">
+                            <tr>
+                                <th>Team 1</th>
+                                <th>Team 2</th>
+                                <th>Winner</th>
+                            </tr>
+                            @foreach (var matchUp in region.OrderBy(y => y.Tourny1.Rank))
+                            {
+                                var checked1 = matchUp.UserChoiceId == matchUp.Tourny1.Id;
+                                var checked2 = matchUp.UserChoiceId == matchUp.Tourny2.Id;
+                                <tr>
+                                    @if (checked1)
+                                    {
+                                        <td>
+                                            <input id="@Html.Raw(i.ToString())" checked="checked" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny1.Id.ToString())" onclick="cW(this.id)" /> @Html.Raw(matchUp.Tourny1.Rank.ToString()). @Html.Raw(matchUp.Tourny1.Team.Name)
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <input id="@Html.Raw(i.ToString())" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny1.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny1.Rank.ToString()). @Html.Raw(matchUp.Tourny1.Team.Name)
+                                        </td>
+                                    }
+
+                                    @{ i++; }
+
+                                    @if (checked2)
+                                    {
+                                        <td>
+                                            <input id="@Html.Raw(i.ToString())" checked="checked" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny2.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny2.Rank.ToString()). @Html.Raw(matchUp.Tourny2.Team.Name)
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <input id="@Html.Raw(i.ToString())" name="teams" type="checkbox" value="@Html.Raw(matchUp.Tourny2.Id.ToString())" onclick="cW(this.id)" />@Html.Raw(matchUp.Tourny2.Rank.ToString()). @Html.Raw(matchUp.Tourny2.Team.Name)
+                                        </td>
+                                    }
+                                    @if (matchUp.Winner.Rank > 0)
+                                    {
+                                        <td>
+                                            @Html.Raw(matchUp.Winner.Rank.ToString()). @Html.Raw(matchUp.Winner.Team.Name)
+                                        </td>
+                                        <script type="text/javascript">
+									var id1 = @Html.Raw(i.ToString());
+									var id2 = @Html.Raw(i.ToString()) - 1;
+									$('#'+id1).attr('disabled', true);
+									$('#'+id2).attr('disabled', true);
+                                        </script>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                </tr>
+                                    i++;
+                            }
+                        </table>
+                    </div>
+                }
+                <input type="submit" value="Submit Picks" />
+            }
+        }
+    </div>
+    <script type="text/javascript">
+        function cW(i) {
+            var e = '#' + i;
+            if(i % 2 == 1) {
+                i++;
+            }
+            else {
+                i--;
+            }
+            var oe = '#' + i;
+            $(e).attr('checked', true);
+            $(oe).attr('checked', false);
+        }
+    </script>

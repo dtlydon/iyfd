@@ -1,0 +1,12 @@
+﻿@{
+    var roundName = 1;
+}
+<div>
+    <ul>
+        @foreach(var round in ViewBag.Rounds)
+        {
+            roundName = round.Name;
+            <li>@Html.ActionLink("Round " + roundName, "MimicPlay", "Admin", new { id = ViewBag.MimicUserID, round = round.ID }, null)</li>
+        }
+    </ul>
+</div>
